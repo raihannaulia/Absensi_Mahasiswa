@@ -13,27 +13,27 @@
         android:layout_height="wrap_content"
         android:hint="Tanggal"
         android:layout_margin="10dp"
-        android:id="@+id/et_tanggal"/>
+        android:id="@+id/tanggal"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nama"
         android:layout_margin="10dp"
-        android:id="@+id/et_nama"/>
+        android:id="@+id/nama"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nim"
         android:layout_margin="10dp"
-        android:id="@+id/et_nim"/>
+        android:id="@+id/nim"/>
     <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Matakuliah"
         android:layout_margin="10dp"
-        android:id="@+id/et_matakuliah"/>
+        android:id="@+id/matakuliah"/>
 
     <RadioGroup
         android:layout_marginRight="10dp"
@@ -49,29 +49,30 @@
             android:layout_weight="1"
             android:text="Present"
             android:checked="true"
-            android:id="@+id/ab_P"/>
+            android:id="@+id/present"/>
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Absent"
-            android:id="@+id/ab_A"/>
+            android:id="@+id/absent"/>
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Late"
-            android:id="@+id/ab_L"/>
+            android:id="@+id/late"/>
     </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:onClick="ButtonCLick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Simpan"
-        android:id="@+id/bt_Submit"/>
+        android:id="@+id/submit"/>
 
 
     <View
@@ -86,10 +87,100 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/displayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/displayDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/displayNim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:text="" />
+
+    <TextView
+        android:id="@+id/displaySubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        tools:text="" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/displayPresence"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/divider"-->
+<!--        tools:text="" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/displayPresent"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/divider"-->
+<!--        tools:text="" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/displayAbsent"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/divider"-->
+<!--        tools:text="" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/displayLate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/divider"-->
+<!--        tools:text="" />-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/recycleView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
